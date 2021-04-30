@@ -8,7 +8,8 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var txtBtn: Button
+    private lateinit var incrBtn: Button
+    private lateinit var decrBtn:Button
     private lateinit var txtVw: TextView
 
     var displayText: Int = 1
@@ -18,12 +19,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         txtVw = findViewById(R.id.textView)
         txtVw.text=1.toString()
-        txtBtn = findViewById(R.id.incrBtn)
-        txtBtn.setOnClickListener(){increment()}
+        incrBtn = findViewById(R.id.incrBtn)
+        decrBtn = findViewById(R.id.decrBtn)
+        incrBtn.setOnClickListener(){increment()}
+        decrBtn.setOnClickListener(){decrement()}
     }
 
     private fun increment() {
         displayText += 1
+        txtVw.text = displayText.toString()
+    }
+    private fun decrement() {
+        displayText -= 1
         txtVw.text = displayText.toString()
     }
 
