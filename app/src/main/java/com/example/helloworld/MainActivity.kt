@@ -17,11 +17,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         txtVw = findViewById(R.id.textView)
+        txtVw.text=1.toString()
         txtBtn = findViewById(R.id.incrBtn)
         txtBtn.setOnClickListener(){increment()}
     }
 
-    fun increment() {
+    private fun increment() {
         displayText += 1
         txtVw.text = displayText.toString()
     }
